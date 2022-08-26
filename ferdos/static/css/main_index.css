@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'yekan';
+    src: url('../fonts/yekan.eot?#')format('eot'), 
+         url('../fonts/yekan.ttf')format('truetype'), 
+         url('../fonts/yekan.woff')format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'danstevis';
+    src: url('../fonts/danstevis.eot?#')format('eot'), 
+         url('../fonts/danstevis.ttf')format('truetype'), 
+         url('../fonts/danstevis.woff')format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'koodak';
+    src: url('../fonts/koodak.eot?#')format('eot'), 
+         url('../fonts/koodak.ttf')format('truetype'), 
+         url('../fonts/koodak.woff')format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nazanin';
+    src: url('../fonts/nazanin.eot?#')format('eot'), 
+         url('../fonts/nazanin.ttf')format('truetype'), 
+         url('../fonts/nazanin.woff')format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+img{
+    width: 100px !important;
+    height: 100px !important;
+}
+
+.jumbotron{
+    background-color: aqua !important ;
+    padding: 0.5rem 0.5rem !important; 
+    margin-bottom: 0.5rem !important;
+}
+.garden{
+    color: red;
+}
+
+
+.footer{
+    width: auto;
+    height: 200px;
+    margin: 10px auto;
+    background-color: aqua !important ;
+}

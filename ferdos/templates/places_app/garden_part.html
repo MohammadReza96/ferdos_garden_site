@@ -1,0 +1,23 @@
+{% extends 'main_index.html' %}
+{% load static %}
+
+{% block title %}بخش های باغ{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href=" {% static 'css/garden_part.css' %}">
+{% endblock style %}
+
+{% block body %}
+     <div class="body">
+        <h1 class="title">{{place.place_name}}</h1>
+        <img src="{{media_url}}/{{place.place_image}}" alt="" class="image">
+        <p class="description">{{place.information}}</p>
+        <br><br><br><br><br>
+        <span class="rule">قوانین و مقررات : {{place.rules}} </span>
+        <hr>
+        <span class="visit_day">روز های بازدید : {{place.visiting_day}}</span>
+        <hr>
+        <span class="visit_hour">ساعات بازدید : {{place.visiting_hour}}</span>
+
+     </div>
+{% endblock body %}

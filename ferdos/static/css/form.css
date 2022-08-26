@@ -1,0 +1,12 @@
+.form_style{
+    margin: 20px auto !important;
+    width: auto !important;
+    height: auto !important;
+    background-color: rgb(255, 255, 255);
+}
+
+.submit{
+    width: 50px !important ;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}

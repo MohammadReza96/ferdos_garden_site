@@ -1,0 +1,32 @@
+{% extends 'main_index.html' %}
+{% load static %}
+
+{% block title %}فرم تماس با باغ موزه فردوس{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href=" {% static 'css/form.css' %}">
+{% endblock style %}
+
+{% block body %}
+    <div class="form_style">
+        <form action="" method='post'> 
+            {% csrf_token %}
+            <label for="name">نام :</label>
+            {{form.first_name}}
+            <br>
+            <label for="family">نام خانوادگی :</label>
+            {{form.last_name}}
+            <br>
+            <label for="email">ایمیل :</label>
+            {{form.email}}
+            <br>
+            <label for="title">عنوان پیام :</label>
+            {{form.title}}
+            <br>
+            <label for="text">پیام :</label>
+            {{form.text}}
+            <br>
+            <input type="submit" value='ثبت' class='submit'>
+        </form>
+    </div>
+{% endblock body %}
