@@ -1,2 +1,2 @@
 # ferdos_garden_site
-this is a website which is made by python-Django-html css-bootstarpt
+this is a website which is made by Django 
