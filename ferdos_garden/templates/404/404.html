@@ -1,0 +1,15 @@
+{% extends 'main_template.html' %}
+
+{% block title %}page not found{% endblock title %}
+
+{% block main %}
+    <div class="body-404">
+        <div class="jumbotron d-flex justify-content-around">
+            <div class="container color col-7">
+                <h1 class="display-1 text-center">404</h1>
+                <p class='text-center'>صفحه مورد نظر یافت نشد</p>
+                <p class='text-center'><a href="{% url 'index:home' %}" >بازگشت به خانه</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock main %}

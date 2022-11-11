@@ -1,0 +1,20 @@
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+
+
+<script>
+    function like(id){
+        $.ajax({
+            type : "GET",
+            url : "{% url 'memory:like' %}",
+            data : {
+                memory_id: id,
+            },
+            success: function(res){
+                $('#like_icon'+id).removeClass('fa-heart-o'),
+                $('#like_icon'+id).addClass('fa-heart')
+            }
+        });
+    }
+</script>

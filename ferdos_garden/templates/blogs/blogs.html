@@ -1,0 +1,79 @@
+{% extends 'main_template.html' %}
+
+{% block title %}Blogs{% endblock title %}
+
+{% block main %}
+            {% for blog in page_obj %}
+                <div class="d-flex justify-content-around flex-wrap col-10  my-4 mx-auto p-3 bt-style shadow">
+                    <img src="{{media_url}}{{blog.blog_main_image}}" alt="{{blog.blog_slug}}" class='col-sm-12 col-lg-4 mx-sm-auto blog-image-style '>
+                    <div class="col-sm-12 my-sm-3 col-lg-8 text-justify">
+                        <h2>{{blog.blog_title}}</h2>
+                        <span class="text-secondary">{{blog.blog_short_text}}</span>
+                    </div>
+                    <div class="col-sm-12 col-lg-2 p-2  mt-2 bt-style text-center shadow-sm">
+                        {{blog.blog_group}}
+                    </div>
+                    <div class="col-sm-12 col-lg-5 p-2  mt-2 bt-style text-center shadow-sm">
+                        <span>نویسنده :</span>&nbsp;<span class="text-secondary">{{blog.blog_author}}</span>
+                    </div>
+                    <div class="col-sm-12 col-lg-3 p-2  mt-2 bt-style text-center shadow-sm">
+                        <span>تعداد بازدید کنندگان :</span>&nbsp;<span class="text-secondary">{{blog.blog_view_number}}</span>
+                    </div>
+                    <div class="col-sm-12 col-lg-1 p-auto pl-sm-0 pl-lg-4  mt-2 bt-style">
+                        <a href=" {% url 'blogs:_blog' blog.blog_slug %} " class='btn btn-outline-primary bt-style'>ادامه</a>
+                    </div>
+                </div>  
+            {% endfor %}
+
+
+
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+        
+                <!--Previous-->
+                {% if page_obj.has_previous %}
+                    <li class="page-item "><a class="page-link" href="?page={{ page_obj.previous_page_number }}">قبلی</a></li>
+                        {% endif %}
+                <!-- Previous-->
+        
+                <!--Hellip-->
+                {% if page_obj.number|add:'-4' > 1 %}
+                    <li class="page-item"><a class="page-link " href="?page={{ page_obj.number|add:'-5' }}">&hellip;</a></li>
+                {% endif %}
+        
+            <!--Pager-->
+            {% for i in page_obj.paginator.page_range %}
+                {% if page_obj.number == i %}
+                    <li class="page-item active text-dark" aria-current="page">
+                        <span class="page-link">
+                            {{ i }}
+                            <span class="sr-only">(current)</span>
+                        </span>
+                    </li>
+                {% elif i > page_obj.number|add:'-5' and i < page_obj.number|add:'5' %}
+                    <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                {% endif %}
+            {% endfor %}
+            <!--end Pager__>
+        
+            <!Hellip-->
+            {% if page_obj.paginator.num_pages > page_obj.number|add:'4' %}
+                <li class="page-item"><a class="page-link " href="?page={{ page_obj.number|add:'5' }}">&hellip;</a></li>
+            {% endif %}
+            <!end Hellip -->
+        
+            <!--Next-->
+            {% if page_obj.has_next %}
+                <li class="page-item ">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}">بعدی</a>
+                </li>
+            {% else %}
+                <li class="page-item-disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="True">بعدی</a></li>
+            {% endif %}
+            <!--end Next-->
+            </ul>
+        </nav>
+        
+            <!-- end of pagination -->
+{% endblock main %}

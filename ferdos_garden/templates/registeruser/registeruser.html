@@ -1,0 +1,21 @@
+{% extends 'main_template.html' %}
+
+{% block title %}sign up{% endblock title %}
+
+{% block main %}
+<div class="d-flex  justify-content-around flex-wrap">
+    <div class="col-sm-12 col-lg-8 bd bg-light p-4">
+            <div class="col-sm-12 col-lg-10 text-light text-center mb-3 mx-auto p-3 bg-info bt-style">
+                ثبت نام
+            </div>
+            <form action="" method="post" class="col-sm-12 col-lg-10 ml-1 mx-auto"  id="contactform">
+                {% csrf_token %}
+                {{form.as_p}}
+                <div class="row  my-3 border-1">
+                    <input type="submit" value="ثبت" class="p-3 btn btn-outline-info  btn-block font-weight-bold border-1 ">
+                </div>
+            </form>
+    </div> 
+
+  
+{% endblock main %}

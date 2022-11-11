@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}main template{% endblock title %}</title>
+    <link rel="stylesheet" href=" {% static 'css/main_template.css' %} ">
+    <link rel="stylesheet" href=" {% static 'bootstrap/bootstrap-rtl.min.css' %} ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% include 'partials/script.html' %}
+    <script src="{% static 'bootstrap/popper.min.js' %}"></script>
+</head>
+<body class="rtl bg-light">
+    <header class='header bg-success text-light'>
+        <img src="{{media_url}}/image/logo/logo1.png" class='m-5 rounded-circle logo-style' alt="ferdos-garden_logo">
+        {% include 'partials/loging_state.html' %}
+    </header>
+    <main class='navbar-menu col-11 mx-auto my-3 menu-style'>
+        {% include 'partials/navbar/navbar.html' %}
+    </main>
+    <main class='body col-9 mx-auto'>{% block main %}{% endblock main %}</main>
+    <footer class='footer bg-info text-light'>فوتر</footer>
+
+
+
+</body>
+</html>

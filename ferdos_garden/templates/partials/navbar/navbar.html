@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light border border-dark menu-style">
+    <a class="navbar-brand text-danger" href="#"><span class="garden">باغ فردوس</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link text-info" href=" {% url 'index:home' %} ">صفحه اصلی<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-info" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            معرفی باغ
+          </a>
+          <div class="dropdown-menu border-style" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item text-info border-style text-center" href=" {% url 'places:history' %} ">تاریخچه</a>
+            <a class="dropdown-item border-style text-info text-center" href=" {% url 'places:places' %} ">بخش های باغ</a>
+            <a class="dropdown-item border-style text-info text-center" href=" {% url 'places:pdf' 'fferdowsGardenPath.pdf' %} ">فایل مسیر یابی</a>
+            <a class="dropdown-item border-style text-info text-center" href=" {% url 'places:price-rules' %} ">برنامه و قوانین و قیمت ها</a>
+          </div>
+        <li class="nav-item">
+          <a class="nav-link text-info" href=" {% url 'blogs:_blogs' %} ">مقالات</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link text-info" href=" {% url 'memory:_add' %}">درج خاطره</a>
+        </li>
+        {% endif %}
+
+        <li class="nav-item">
+          <a class="nav-link text-info" href=" {% url 'memory:_memory' %} ">خاطرات بازدید</a>
+        </li>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-info" href="#"> آموزش و پژوهش</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-info mr-4" href=" {% url 'contact:contact_us' %}">تماس با ما</a>
+      </li>
+    </ul>
+      <form class="form-inline  my-2 my-lg-0" action="/search/" method="get">
+        <input class="form-control  ml-sm-5 border-style" name='q' type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-info ml-sm-1 my-2 my-sm-0 border-style" type="submit">جست و جو</button>
+      </form>
+    </div>
+  </nav>

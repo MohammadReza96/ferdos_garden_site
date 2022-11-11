@@ -1,0 +1,75 @@
+{% extends 'main_template.html' %}
+
+{% block title %}search result{% endblock title %}
+
+{% block main %}
+
+
+    {% if memories %}
+        <div class="col-sm-12 col-lg-10 text-center bg-success text-light mx-auto  my-3 p-3 search_style bt-style">لیست خاطره های یافت شده</div>
+        {% for memory in memories %}
+            <div class='d-flex col-sm-12 col-lg-10 justify-content-around flex-wrap mx-auto  py-4 shadow bt-style'>
+                <h1 class="col-sm-12 col-lg-11">
+                    {{memory.memory_title}}
+                </h1>
+                <div class="col-sm-12 col-lg-11 text-justify text-secondary">
+                    {{memory.memory_text}}
+                </div>
+                <div class="col-sm-12 col-lg-11 text-justify  mt-1">
+                    <i class="fa fa-calendar"></i>&nbsp;&nbsp;&nbsp;<span>{{memory.memory_register_date}}</span>
+                </div>
+                <h5 class="col-sm-12 col-lg-11 mt-1">
+                    عکس های ارسالی
+                </h5>
+                <div class="col-sm-12 col-lg-11 d-flex justify-content-start flex-wrap my-2">
+                {% for image in memory.image.all %}
+                    <img src="{{media_url}}{{image.memory_image}}" alt="{{memory.memory_title}}" class='col-sm-12 col-lg-3 my-1 ml-0'>
+                {% endfor %}
+                </div>
+            </div>
+            <br>
+            <br>
+        {% endfor %}
+    {% endif %}
+
+
+
+    {% if blogs %}
+        <div class="col-sm-12 col-lg-10 text-center bg-success text-light mx-auto p-3 search_style bt-style">لیست مقالات یافت شده</div>
+        {% for blog in blogs %}
+            <div class="d-flex justify-content-around flex-wrap col-sm-12 col-lg-10  my-4 mx-auto p-3 bt-style shadow">
+                <img src="{{media_url}}{{blog.blog_main_image}}" alt="{{blog.blog_slug}}" class='col-sm-12 col-lg-4 mx-sm-auto blog-image-style '>
+                <div class="col-sm-12 my-sm-3 col-lg-8 text-justify">
+                    <h2>{{blog.blog_title}}</h2>
+                    <span class="text-secondary">{{blog.blog_short_text}}</span>
+                </div>
+                <div class="col-sm-12 col-lg-2 p-2  mt-2 bt-style text-center shadow-sm">
+                    {{blog.blog_group}}
+                </div>
+                <div class="col-sm-12 col-lg-5 p-2  mt-2 bt-style text-center shadow-sm">
+                    <span>نویسنده :</span>&nbsp;<span class="text-secondary">{{blog.blog_author}}</span>
+                </div>
+                <div class="col-sm-12 col-lg-3 p-2  mt-2 bt-style text-center shadow-sm">
+                    <span>تعداد بازدید کنندگان :</span>&nbsp;<span class="text-secondary">{{blog.blog_view_number}}</span>
+                </div>
+                <div class="col-sm-12 col-lg-1 p-auto pl-sm-0 pl-lg-4  mt-2 bt-style">
+                    <a href=" {% url 'blogs:_blog' blog.blog_slug %} " class='btn btn-outline-primary bt-style'>ادامه</a>
+                </div>
+            </div>  
+        {% endfor %}
+        {% endif %}
+
+        
+    {% if not blogs and not memories %}
+        <div class="body-404">
+            <div class="jumbotron d-flex justify-content-around">
+                <div class="container color col-7">
+                    {% comment %} <h1 class="display-1 text-center">404</h1> {% endcomment %}
+                    <h1 class='text-center'>محتوایی یافت نشد</h1>
+                    <p class='text-center'><a href="{% url 'index:home' %}" >بازگشت به خانه</a></p>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock main %}

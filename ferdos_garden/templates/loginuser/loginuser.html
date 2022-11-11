@@ -1,0 +1,24 @@
+{% extends 'main_template.html' %}
+
+{% block title %}log in{% endblock title %}
+
+{% block main %}
+<div class="d-flex  justify-content-around flex-wrap">
+    <div class="col-sm-12 col-lg-10 bd bg-light p-4">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-lg-10 text-light text-center mb-3 p-3 bg-info bt-style">
+                 ورود
+            </div>
+            <form action="" method="post" class="col-sm-12 col-lg-10 ml-1">
+                {% csrf_token %}
+                {{form.as_p}}
+                <div class="row  my-3 border-1">
+                    <input type="submit" value="ثبت نظر" class="p-3 btn btn-outline-info  btn-block font-weight-bold border-1 ">
+                </div>
+            </form>
+            {% for message in messages %}
+                <h3 class="alert alert-{{message.tags}} col-lg-10 mb-3 bt-style text-center">{{message}}</h3>
+            {% endfor %}
+        </div>
+    </div> 
+{% endblock main %}

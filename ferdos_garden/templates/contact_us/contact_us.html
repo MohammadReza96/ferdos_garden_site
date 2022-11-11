@@ -1,0 +1,70 @@
+{% extends 'main_template.html' %}
+
+{% block title %}contact us{% endblock title %}
+
+{% block main %}
+<div class="d-flex  justify-content-around flex-wrap">
+    <div class="col-sm-12 col-lg-7 bd bg-light p-4">
+
+        <div class="row justify-content-around mb-3">
+            {% for message in messages %}
+                <h3 class="alert alert-{{message.tags}} col-sm-12 col-lg-10 bt-style text-center">{{message}}</h3>
+            {% endfor %}
+        </div>
+        
+        <div class="row justify-content-center">
+            <form action="" method="post" class="col-sm-12 col-lg-10 ml-1"  id="contactform" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table class='ml-2'>
+                    <div class="row  bg-info border-1 mb-3 pt-3">
+                        <h1 class="col-sm-12   text-light text-left font-weight-bold rounded  style-1">سوالی دارید؟</h1>
+                        <h6 class="col-sm-12   text-light text-left  rounded  style-1">با استفاده از فرم زیر می توانید با ما ارتباط برقرار کنید</h6>
+                    </div>
+                    {{form.as_table}}
+                </table>
+                <div class="row  my-3 border-1">
+                    <input type="submit" value="ثبت نظر" class="p-3 btn btn-outline-info col-sm-12 col-lg-12 font-weight-bold border-1 ">
+                </div>
+            </form>
+        </div>
+    </div> 
+
+    <div class="col-sm-12 col-lg-5  bg-light p-4  mb-3 border-1 shadow">
+        <div>
+            <div><h3 class='h1-history text-info my-3'>باغ فردوس تهران کجاست؟</h3></div>
+            <div class='d-flex col-12 justify-content-center  mb-5'><img src="{{media_url}}/image/places/ferdos_history/ferdos_garden2.jpeg" alt="ferdos_garden3" class='col-sm-12 col-lg-10'></div>
+            <div><p class="p5-history text-justify">باغ موزه فردوس در شمال شهر تهران و در محله‌ای با صفا به نام باغ فردوس است. این محله قاجاری از شمال به میدان تجریش ابتدای خیابان ولیعصر، از جنوب به توتونچی، از شرق به خیابان‌ دربندی و از غرب به خیابان ولیعصر منتهی می‌شود.</p> 
+            <br>
+            <div>
+                <li>
+                    <span>روز های بازدید </span> <span class='text-secondary'>:   یکشنبه‌ها تا جمعه‌ها از ساعت ۱۰ تا ۱۸؛ روزهای تعطیل: شنبه‌ها و ایام سوگواری</span>
+                </li>
+                <br>
+                <li>
+                    <span>ساعات کار غرفه‌های فرهنگی و کافه‌های باغ فردوس </span> <span class='text-secondary'>: ۹صبح تا ۲۴</span>
+                </li>
+                <br>
+                <li>
+                    <span>  آدرس </span> <span class='text-secondary'>:  ایران، استان تهران، تهران، خیابان ولیعصر، نرسیده به میدان تجریش، کوچه بخشایش </span>
+                </li>
+                <br>
+                <li>
+                    <span> تلفن تماس </span> <span class='text-secondary'>:  02122897644 </span>
+                </li>
+                <br>
+                <li>
+                    <span> ایمیل  </span> <span class='text-secondary'>:  ferdoos_garden@yahoo90.com </span>
+                </li>
+                <br>
+                <li>
+                    <p> مشاهده <a href=" {% url 'places:price-rules' %} " class='text-secondary '>قیمت بلیط</a> بخش های مختلف </p>
+                </li>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<br>
+<br>
+{% endblock main %}

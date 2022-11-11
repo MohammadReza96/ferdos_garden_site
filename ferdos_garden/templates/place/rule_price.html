@@ -1,0 +1,96 @@
+{% extends 'main_template.html' %}
+
+{% block title %}price-rules{% endblock title %}
+
+{% block main %}
+        <div class='d-flex justify-content-around flex-wrap col-12 '>
+            <div class='col-lg-5 col-sm-12 my-5 shadow bt-style'>
+            <h1 class='my-3 text-center'>قیمت بلیط بخش اول</h1>
+            <table  border='1' class="mx-auto mb-3">
+                {% for item in place_1 %}
+                    <tr>
+                        <td class='p-5'>{{item.visitor_type}}</td>
+                        <td class='p-5 text-primary'>{{item.price}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            </div>
+            <div class='col-lg-5 col-sm-12 my-5 shadow bt-style'>
+            <h1 class=' my-3 text-center'>قیمت بلیط بخش دوم</h1>
+            <table  border='1' class="mx-auto mb-3">
+                {% for item in place_2 %}
+                    <tr>
+                        <td class='p-5'>{{item.visitor_type}}</td>
+                        <td class='p-5 text-primary'>{{item.price}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            </div>
+            <div class='col-lg-5 col-sm-12 my-5 shadow bt-style'>
+            <h1 class='my-3 text-center'>قیمت بلیط بخش سوم</h1>
+            <table  border='1' class="mx-auto mb-3">
+                {% for item in place_3 %}
+                    <tr>
+                        <td class='p-5'>{{item.visitor_type}}</td>
+                        <td class='p-5 text-primary'>{{item.price}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            </div>
+            <div class='col-lg-5 col-sm-12 my-5 shadow bt-style'>
+            <h1 class='my-3 text-center'>قیمت بلیط بخش چهارم</h1>
+            <table  border='1' class="mx-auto mb-3">
+                {% for item in place_4 %}
+                    <tr>
+                        <td class='p-5'>{{item.visitor_type}}</td>
+                        <td class='p-5 text-primary'>{{item.price}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            </div>
+            <div class='col-lg-5 col-sm-12 my-5 shadow bt-style'>
+            <h1 class='my-3 text-center'>قیمت بلیط بخش پنجم</h1>
+            <table  border='1' class="mx-auto mb-3">
+                {% for item in place_5 %}
+                    <tr>
+                        <td class='p-5'>{{item.visitor_type}}</td>
+                        <td class='p-5 text-primary'>{{item.price}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            </div>
+            <div class='col-lg-5 col-sm-12 my-5 shadow bt-style'>
+            <h1 class='my-3 text-center'>قیمت بلیط بخش ششم</h1>
+            <table  border='1' class="mx-auto mb-3">
+                {% for item in place_6 %}
+                    <tr>
+                        <td class='p-5'>{{item.visitor_type}}</td>
+                        <td class='p-5 text-primary'>{{item.price}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            </div>
+            <div class='col-lg-5 col-sm-12 my-5 shadow bt-style'>
+            <h1 class='my-3 text-center'>قیمت بلیط بخش هفتم</h1>
+            <table  border='1' class="mx-auto mb-3">
+                {% for item in place_7 %}
+                    <tr>
+                        <td class='p-5'>{{item.visitor_type}}</td>
+                        <td class='p-5 text-primary'>{{item.price}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            </div>
+            <div class='col-lg-5 col-sm-12 my-5 shadow bt-style'>
+            <h1 class='my-3 text-center'>قیمت بلیط بخش هشتم</h1>
+            <table  border='1' class="mx-auto mb-3">
+                {% for item in place_8 %}
+                    <tr>
+                        <td class='p-5'>{{item.visitor_type}}</td>
+                        <td class='p-5 text-primary'>{{item.price}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            </div>
+        </div>
+{% endblock main %}

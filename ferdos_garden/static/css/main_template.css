@@ -1,0 +1,139 @@
+@font-face {
+    font-family: 'yekan';
+    src: url('../font/yekan.eot?#')format('eot'), 
+         url('../font/yekan.ttf')format('truetype'), 
+         url('../font/yekan.woff')format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'danstevis';
+    src: url('../font/danstevis.eot?#')format('eot'), 
+         url('../font/danstevis.ttf')format('truetype'), 
+         url('../font/danstevis.woff')format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'koodak';
+    src: url('../font/koodak.eot?#')format('eot'), 
+         url('../font/koodak.ttf')format('truetype'), 
+         url('../font/koodak.woff')format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Darkob';
+    src: url('../font/Darkob.ttf')format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nazanin';
+    src: url('../font/nazanin.eot?#')format('eot'), 
+         url('../font/nazanin.ttf')format('truetype'), 
+         url('../font/nazanin.woff')format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body{
+    font-family: 'Darkob' !important;
+    /* background-image: url("ferdos_background.jpg"); */
+}
+.header{
+    width: auto;
+    height: 200px;
+}
+.logo-style{
+    width: 200px;
+    height: 200px;
+    position: absolute !important;
+    top: 5px !important;
+}
+.menu-style{
+    border-radius: 25px !important;
+    position: sticky !important;
+    top: 10px !important;
+    z-index: 100;
+}
+.border-style{
+    border-radius: 20px !important;
+}
+.carousel-item {
+    height: 500px !important;
+  }
+.image-s {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      min-height: 300px !important;
+  }
+.body-index{
+    width: auto;
+    height: 500px;
+    padding: 20px 20px !important;
+}
+.history-image{
+    width: 840px !important;
+}
+.footer{
+    width: auto;
+    height: 200px;
+}
+
+.border-1{
+    border-radius: 15px !important;
+}
+th{
+    background-color: #3999af !important;
+    border-radius: 15px;
+    color: white;
+}
+label{
+    margin: 0 20px !important;
+}
+.errorlist li{
+    color: red;
+}
+.text-places-style{
+    height: 75px !important;
+    border-radius: 15px;
+}
+.bt-style{
+    border-radius: 15px !important;
+}
+.blur-style{
+    filter: blur(3px);
+}
+.t_rule{
+    border: 1 solid #3999af !important;
+    border-radius: 15px !important;
+}
+.blog-image-style{
+    width: 400px !important;
+    height: 200px !important;
+    border-radius: 50px !important;
+}
+.status-style-1{
+    height: 60px !important;
+}
+.status-style-2{
+    border-radius: 15px !important;
+    height: 49px !important;
+    width: 80px !important;
+
+}
+.blog_image_size{
+    width: 500px !important;
+    height: 500px !important;
+}
+
+.search_style{
+    font-size: 20px !important;
+}

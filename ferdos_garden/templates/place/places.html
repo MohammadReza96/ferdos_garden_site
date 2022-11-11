@@ -1,0 +1,92 @@
+{% extends 'main_template.html' %}
+
+{% block title %}places{% endblock title %}
+
+{% block main %}
+    <div class="d-flex justify-content-md-around flex-wrap bt-style">
+        {% for place in page_obj %}
+            <div class="card mb-4 bt-style" style="width:38rem ;">
+                <img src="{{media_url}}{{place.place_image_name}}" alt="ferdos_garden1" class="card-img-top bt-style blur-style">
+                <div class="card-img-overlay ">
+                <div class="body position-absolute" style="right:15px;left:15px;bottom:15px;">
+                    <h1 class="card-title text-light">{{place.place_name}}</h1>
+                    <div class="card-text text-justify text-secondary bg-light p-2 text-places-style overflow-hidden ">{{place.place_information}}</div>
+                    <a href="#" class="btn btn-primary mt-2 bt-style">مشاهده بیشتر</a>
+                </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+
+
+
+
+
+<nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+
+        <!--Previous-->
+        {% if page_obj.has_previous %}
+            <li class="page-item "><a class="page-link" href="?page={{ page_obj.previous_page_number }}">قبلی</a></li>
+                {% endif %}
+        <!-- Previous-->
+
+        <!--Hellip-->
+        {% if page_obj.number|add:'-4' > 1 %}
+            <li class="page-item"><a class="page-link " href="?page={{ page_obj.number|add:'-5' }}">&hellip;</a></li>
+        {% endif %}
+
+    <!--Pager-->
+    {% for i in page_obj.paginator.page_range %}
+        {% if page_obj.number == i %}
+            <li class="page-item active text-dark" aria-current="page">
+                <span class="page-link">
+                    {{ i }}
+                    <span class="sr-only">(current)</span>
+                </span>
+            </li>
+        {% elif i > page_obj.number|add:'-5' and i < page_obj.number|add:'5' %}
+            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+        {% endif %}
+    {% endfor %}
+    <!--end Pager__>
+
+    <!Hellip-->
+    {% if page_obj.paginator.num_pages > page_obj.number|add:'4' %}
+        <li class="page-item"><a class="page-link " href="?page={{ page_obj.number|add:'5' }}">&hellip;</a></li>
+    {% endif %}
+    <!end Hellip -->
+
+    <!--Next-->
+    {% if page_obj.has_next %}
+        <li class="page-item ">
+        <a class="page-link" href="?page={{ page_obj.next_page_number }}">بعدی</a>
+        </li>
+    {% else %}
+        <li class="page-item-disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="True">بعدی</a></li>
+    {% endif %}
+    <!--end Next-->
+    </ul>
+</nav>
+
+    <!-- end of pagination -->
+{% endblock main %}
+
+
+
+
+{% comment %} <div class="media d-flex flex-wrap justify-content-between">
+    {% for place in places %}
+        <div class="col-5  m-1">
+            <div class='d-flex col-12 justify-content-center  my-3'><img src="{{media_url}}{{place.place_image_name}}" alt="ferdos_garden1" class='col-sm-12 col-lg-10' ></div>
+            <div class="media-body">
+                <h5 class="mt-0">{{place.place_name}}</h5>
+                <p class='text-justify text-places-style'>{{place.place_information}}</p>
+                <a class="btn btn-info btn-sm" href='#'>Result</a>
+            </div>
+        </div>
+    {% endfor %}
+</div> {% endcomment %}
+
